@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "Atkinson Next";
+  src: url("fonts/atkinson-hyperlegible-next-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Next";
+  src: url("fonts/atkinson-hyperlegible-next-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --indigo: #2b3a6e;
+  --indigo-soft: #dfe3f0;
+  --ink: #18241f;
+  --ink-2: #4a5852;
+  --paper: #edf0eb;
+  --sheet: #fbfcfa;
+  --rule: #c9cfc8;
+  --green: #1e7f47;
+  --red: #b42318;
+  --orange: #c77700;
+  --grey: #6f7a75;
+  --focus: #2b3a6e;
+  --font: "Atkinson Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --indigo: #9fb0ea;
+    --indigo-soft: #263055;
+    --ink: #e7ece8;
+    --ink-2: #a9b5af;
+    --paper: #121a17;
+    --sheet: #1a2420;
+    --rule: #33403a;
+    --green: #4cc27f;
+    --red: #ff6b5e;
+    --orange: #f2a43a;
+    --grey: #98a39e;
+    --focus: #9fb0ea;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --indigo: #9fb0ea;
+  --indigo-soft: #263055;
+  --ink: #e7ece8;
+  --ink-2: #a9b5af;
+  --paper: #121a17;
+  --sheet: #1a2420;
+  --rule: #33403a;
+  --green: #4cc27f;
+  --red: #ff6b5e;
+  --orange: #f2a43a;
+  --grey: #98a39e;
+  --focus: #9fb0ea;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+a { color: var(--indigo); text-underline-offset: 0.18em; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.num { font-variant-numeric: tabular-nums; }
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.25rem clamp(1rem, 4vw, 2.5rem) 1rem;
+  border-bottom: 3px solid var(--indigo);
+  background: var(--sheet);
+}
+.brand { display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
+.brand-mark {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--indigo);
+  text-decoration: none;
+}
+.brand-sub { color: var(--ink-2); }
+.masthead nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.masthead nav a[aria-current="page"] { color: var(--ink); text-decoration: none; font-weight: 700; }
+
+main { padding: clamp(1rem, 4vw, 2.5rem); max-width: 1240px; margin: 0 auto; }
+h1, h2, h3 { line-height: 1.2; margin: 0 0 0.5em; }
+h1 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+h2 { font-size: 1.25rem; }
+.lede { font-size: 1.125rem; max-width: 62ch; color: var(--ink-2); }
+
+.status-dot {
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 50%;
+  vertical-align: -0.05em;
+  margin-right: 0.4em;
+  background: var(--grey);
+}
+.status-green { background: var(--green); }
+.status-red { background: var(--red); }
+.status-orange { background: var(--orange); }
+.status-grey { background: var(--grey); }
+
+.notice {
+  border-left: 4px solid var(--orange);
+  background: var(--sheet);
+  padding: 0.75rem 1rem;
+  max-width: 70ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

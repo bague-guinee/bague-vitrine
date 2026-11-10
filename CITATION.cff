@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "Si vous citez BAGUÉ, merci d'utiliser ces informations. / If you cite BAGUÉ, please use this metadata."
+title: "BAGUÉ : identification du bétail par le mufle et registre national anti-vol pour la Guinée"
+abstract: >-
+  BAGUÉ est un registre national anti-vol du bétail pour la Guinée fondé sur la biométrie du mufle.
+  Des kits de terrain Raspberry Pi CM5 photographient le mufle dans un cône éclairé ; un encodeur
+  distillé et quantifié en int8, entraîné avec AdaFace, produit une empreinte de 128 nombres ;
+  une alerte rouge exige deux photos concordantes et une confirmation humaine. L'évaluation suit un protocole inter-séances en ensemble ouvert, avec intervalles de
+  confiance par animal et erreurs par race. BAGUÉ is a muzzle-biometrics cattle anti-theft registry
+  for Guinea, designed for low-cost field kits and feature phones.
+type: software
+authors:
+  - family-names: Diallo
+    given-names: Thierno Ibrahima
+    orcid: "https://orcid.org/0009-0008-2793-1901"
+    affiliation: "Harbin Institute of Technology, Shenzhen"
+  - family-names: Souaré
+    given-names: Mamadou Kandara
+version: "0.3.0"
+date-released: "2026-11-10"
+keywords:
+  - muzzle biometrics
+  - cattle identification
+  - livestock traceability
+  - edge AI
+  - AdaFace
+  - knowledge distillation
+  - biometric evaluation
+  - Guinea

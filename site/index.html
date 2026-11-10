@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BAGUÉ — identifier chaque bovin par son mufle</title>
+<meta name="description" content="BAGUÉ : registre national anti-vol du bétail pour la Guinée, fondé sur la biométrie du mufle. Kits de terrain à bas coût, téléphone à touches pour l'éleveur.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&display=swap">
+<style>
+  :root {
+    --bg: #F6F7F4; --sheet: #FFFFFF; --ink: #18241F; --ink-2: #4A5852; --rule: #D5DAD3;
+    --indigo: #2B3A6E; --indigo-soft: #DFE3F0; --on-indigo: #FFFFFF;
+    --green: #1E7F47; --red: #B42318; --orange: #B86E00; --grey: #5F6A65;
+    --font: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121A17; --sheet: #1A2420; --ink: #E7ECE8; --ink-2: #A9B5AF; --rule: #33403A;
+      --indigo: #9FB0EA; --indigo-soft: #263055; --on-indigo: #121A17; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; }
+  a { color: var(--indigo); text-underline-offset: 0.18em; }
+  :focus-visible { outline: 3px solid var(--indigo); outline-offset: 2px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding-inline: max(18px, env(safe-area-inset-left, 0px)); }
+  header.top { border-bottom: 3px solid var(--indigo); background: var(--sheet); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-block: 14px; }
+  .mark { font-weight: 700; font-size: 1.5rem; letter-spacing: 0.04em; color: var(--indigo); text-decoration: none; }
+  nav { display: flex; gap: 18px; flex-wrap: wrap; }
+  section { padding-block: 56px; border-bottom: 1px solid var(--rule); }
+  h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.05; margin: 0 0 18px; text-wrap: balance; }
+  h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.15; margin: 0 0 18px; text-wrap: balance; }
+  h3 { margin: 0 0 6px; font-size: 1.15rem; }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  .muted { color: var(--ink-2); }
+  .hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+  .hero img { width: 100%; height: auto; }
+  .lede { font-size: 1.2rem; color: var(--ink-2); }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+  .btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 10px; font-weight: 700; text-decoration: none; border: 2px solid var(--indigo); }
+  .btn-main { background: var(--indigo); color: var(--on-indigo); }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; counter-reset: step; }
+  .steps > li { counter-increment: step; border-top: 4px solid var(--indigo); padding-top: 12px; }
+  .steps > li::before { content: counter(step); font-weight: 700; font-size: 1.6rem; color: var(--indigo); display: block; }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 0; padding: 0; list-style: none; }
+  .chip { padding: 2px 12px; border-radius: 999px; color: #fff; font-weight: 700; font-size: 0.92rem; }
+  .figure { margin: 0; }
+  .figure img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--rule); background: var(--sheet); }
+  .figure figcaption { color: var(--ink-2); font-size: 0.95rem; margin-top: 8px; }
+  .pipeline { display: flex; flex-wrap: wrap; gap: 10px; align-items: stretch; margin: 10px 0 24px; padding: 0; list-style: none; }
+  .pipeline li { flex: 1 1 150px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px; position: relative; }
+  .pipeline li strong { display: block; }
+  .pipeline li span { color: var(--ink-2); font-size: 0.93rem; }
+  .table-box { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 560px; background: var(--sheet); }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-size: 0.95rem; color: var(--ink-2); }
+  .pending { color: var(--orange); font-weight: 700; }
+  .ok { color: var(--green); font-weight: 700; }
+  .card { background: var(--sheet); border: 1px solid var(--rule); border-radius: 12px; padding: 18px 20px; }
+  footer { padding-block: 36px; color: var(--ink-2); font-size: 0.95rem; }
+  code { font-size: 0.92em; background: var(--indigo-soft); padding: 1px 5px; border-radius: 4px; }
+  @media (max-width: 760px) { .hero { grid-template-columns: 1fr; } section { padding-block: 40px; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="./">BAGUÉ</a>
+    <nav aria-label="Pages du site">
+      <a href="demo.html">Démo *123#</a>
+      <a href="3d.html">Matériel en 3D</a>
+      <a href="#recherche">Recherche</a>
+      <a href="#ethique">Éthique</a>
+      <a href="#english" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap hero">
+      <div>
+        <h1>Identifier chaque bovin par son mufle.</h1>
+        <p class="lede">Un registre national anti-vol du bétail pour la Guinée. Le nez de chaque vache porte des perles et des sillons uniques, comme une empreinte digitale : une photo suffit pour savoir à qui appartient l'animal, ou s'il a été volé.</p>
+        <div class="actions">
+          <a class="btn btn-main" href="demo.html">Essayer le *123# de l'éleveur</a>
+          <a class="btn" href="3d.html">Voir le matériel en 3D</a>
+        </div>
+      </div>
+      <img src="images/3d-kit.jpg" alt="Le kit de contrôle BAGUÉ en 3D : un cône noir posé sur le mufle, un corps clair et une poignée" width="900" height="760">
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap cols">
+      <div>
+        <h2>Le problème</h2>
+        <p>Le vol de bétail ruine des familles d'éleveurs et nourrit des conflits entre communautés. Le marquage au fer et les boucles d'oreille se modifient, se coupent ou s'arrachent : un animal volé change de marché en un jour, sans preuve de propriété.</p>
+      </div>
+      <div>
+        <h2>L'idée</h2>
+        <p>Le mufle ne change pas et ne s'enlève pas. Le kit le photographie au fond d'un cône éclairé (même distance, même lumière) et le transforme en une empreinte de 128 nombres, comparée au registre national. L'éleveur, lui, n'a besoin que d'un téléphone à touches.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Comment ça marche</h2>
+      <ol class="steps">
+        <li><h3>Enregistrer</h3><p class="muted">L'agent inscrit l'éleveur et prend trois photos du mufle. La vache reçoit un code BG-… et un QR code, envoyés par SMS.</p></li>
+        <li><h3>Contrôler</h3><p class="muted">Au marché, au barrage, à l'abattoir : une photo, une couleur.</p>
+          <ul class="chips" aria-label="Les quatre réponses">
+            <li class="chip" style="background: var(--green)">VERT conforme</li>
+            <li class="chip" style="background: var(--red)">ROUGE volé</li>
+            <li class="chip" style="background: var(--orange)">ORANGE à refaire</li>
+            <li class="chip" style="background: var(--grey)">GRIS inconnu</li>
+          </ul></li>
+        <li><h3>Signaler un vol</h3><p class="muted">L'éleveur compose <code>*123#</code> sur n'importe quel téléphone. L'animal passe en alerte dans tout le pays.</p></li>
+        <li><h3>Voyager, vendre <small>(prévu)</small></h3><p class="muted">Certificat de voyage signé, vérifiable sans réseau ; vente entre particuliers confirmée par les deux parties.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap cols">
+      <figure class="figure">
+        <img src="images/demo.gif" alt="Animation du démonstrateur : enregistrement d'une vache, contrôle vert, vol signalé par *123#, contrôle rouge, alerte sur le tableau des autorités" width="800" height="450">
+        <figcaption>Le démonstrateur, de l'enregistrement à l'alerte. Il fonctionne de bout en bout : kit, serveur, *123# et tableau des autorités.</figcaption>
+      </figure>
+      <div>
+        <h2>Le matériel</h2>
+        <p><strong>Kit de terrain</strong> : Raspberry Pi CM5, caméra au fond d'un cône à LED, écran tactile, 4G et GPS, pack de batteries amovible. Environ 165 à 250 USD.</p>
+        <p><strong>Poste fixe solaire</strong> : panneau de 200 W, batterie LiFePO4, routeur 4G double SIM, imprimante, station de recharge pour quatre kits. Environ 920 à 1 520 USD.</p>
+        <p class="muted">Ce sont des conceptions : le premier kit physique n'est pas encore assemblé. Prix estimés à partir des composants, avant devis.</p>
+        <div class="actions"><a class="btn" href="3d.html">Faire tourner le kit et le poste en 3D</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="recherche">
+    <div class="wrap">
+      <h2>La recherche</h2>
+      <p>De la photo à la décision, la même chaîne tourne sur le kit, le serveur et dans les expériences : le modèle voit en production exactement ce qu'il a vu à l'entraînement.</p>
+      <ol class="pipeline" aria-label="Chaîne de reconnaissance">
+        <li><strong>Cône</strong><span>distance et lumière fixes</span></li>
+        <li><strong>Qualité</strong><span>netteté, lumière, reflets ; meilleure prise d'une rafale</span></li>
+        <li><strong>Alignement</strong><span>mufle et narines détectés</span></li>
+        <li><strong>Normalisation</strong><span>224 px, CLAHE</span></li>
+        <li><strong>Empreinte</strong><span>élève MobileNetV4 int8, 128 nombres</span></li>
+        <li><strong>Décision</strong><span>seuil + marge ; ROUGE = 2 photos concordantes + humain</span></li>
+      </ol>
+      <div class="cols">
+        <div class="card"><h3>Apprendre sur le terrain</h3><p class="muted">Professeur ConvNeXt avec AdaFace (marge adaptée à la qualité de l'image), distillé vers un élève léger pour le kit. Les 64 premières dimensions forment une empreinte réduite pour le QR code.</p></div>
+        <div class="card"><h3>Mesurer honnêtement</h3><p class="muted">Enrôlement et contrôle sur des séances différentes, animaux jamais enregistrés, intervalles de confiance par animal, erreurs par race et par âge. Chaque rapport commence par ses limites.</p></div>
+        <div class="card"><h3>Des données propres</h3><p class="muted">Collecte avec le kit lui-même, en plusieurs séances. Consentement obligatoire, aucune donnée personnelle dans le jeu d'entraînement, découpage par animal sans fuite.</p></div>
+      </div>
+
+      <h3 style="margin-top: 36px">Résultats, sans arrondir</h3>
+      <div class="table-box">
+        <table>
+          <thead><tr><th scope="col">Ce qui est mesuré</th><th scope="col">Résultat</th><th scope="col">Conditions</th></tr></thead>
+          <tbody>
+            <tr><td>Chaîne complète : kit, serveur, *123#, tableau</td><td class="ok">Fonctionne de bout en bout</td><td>Tests automatiques et démonstrateur</td></tr>
+            <tr><td>Temps de calcul d'une photo, du contrôle qualité à l'empreinte</td><td>6 ms (médiane), 9 ms (95 %)</td><td>Élève int8, processeur serveur x86 2 cœurs. <strong>Reste à mesurer sur le CM5.</strong></td></tr>
+            <tr><td>Écart entre le modèle float32 et le modèle int8</td><td>Cosinus moyen 0,997 à 0,999</td><td>Deux essais sur données synthétiques</td></tr>
+            <tr><td>Précision sur de vraies vaches guinéennes</td><td class="pending">Pas encore mesurée</td><td>La collecte avec un vétérinaire n'a pas commencé ; le protocole est prêt</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="margin-top: 12px">Pour comparaison, une étude récente obtient 96 % sur des images de laboratoire mais 81 % sur des photos de smartphone prises en ferme (Khalifa et Abdultawab, <em>BMC Veterinary Research</em>, 2026). C'est cet écart que le cône et la collecte en Guinée doivent réduire.</p>
+    </div>
+  </section>
+
+  <section id="ethique">
+    <div class="wrap">
+      <h2>Éthique</h2>
+      <div class="cols">
+        <div><h3>Personne n'est accusé par une machine</h3><p class="muted">Un ROUGE demande deux photos concordantes et une confirmation humaine. Un doute donne ORANGE, jamais une saisie.</p></div>
+        <div><h3>Les erreurs sont publiées</h3><p class="muted">Par race, par âge, par appareil. Un écart entre races bloque le déploiement.</p></div>
+        <div><h3>Les éleveurs gardent la main</h3><p class="muted">Consentement, pas de nom ni de téléphone dans les données de recherche, aucun usage fiscal, droit de retrait.</p></div>
+        <div><h3>Les animaux sont respectés</h3><p class="muted">Une photo, sans marquage. Le cône est désinfecté entre deux animaux.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap cols">
+      <div>
+        <h2>L'équipe</h2>
+        <p><strong>Thierno Diallo</strong> — technologie : IA de reconnaissance, logiciel des kits et du serveur, architecture et sécurité. Chercheur en IA embarquée, laboratoire du Pr Hongpeng Wang, Harbin Institute of Technology, Shenzhen.</p>
+        <p><strong>Mamadou Kandara Souaré</strong> — ventes et opérations à Conakry : autorités, tests sur le terrain, exploitation et déploiement.</p>
+      </div>
+      <div>
+        <h2>Citer</h2>
+        <p class="muted">Diallo, T. I. et Souaré, M. K. (2026). <em>BAGUÉ : identification du bétail par le mufle et registre national anti-vol pour la Guinée</em>. Version 0.2.0.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="english" lang="en">
+    <div class="wrap">
+      <h2>In English</h2>
+      <p>BAGUÉ is a national cattle anti-theft registry for Guinea based on muzzle biometrics. Low-cost Raspberry Pi CM5 field kits photograph the muzzle inside a lit cone; a distilled, int8-quantised encoder trained with AdaFace turns it into a 128-number template compared against the registry (1:1 verification of the claimed animal is planned for national scale). A red alert requires two concordant photos and human confirmation. Farmers report thefts from any feature phone via USSD (<code>*123#</code>). Evaluation follows a cross-session, open-set protocol with subject-level confidence intervals and per-breed error rates. Accuracy on real Guinean cattle has not been measured yet: field data collection has not started.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 Les auteurs du projet BAGUÉ. Tous droits réservés. Contenu publié pour présentation.
+  </div>
+</footer>
+</body>
+</html>
