@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qui sommes-nous — BAGUÉ</title>
+<meta name="description" content="L'équipe BAGUÉ et ses engagements : l'éleveur d'abord, personne accusé par une machine, données protégées, chiffres honnêtes, coût bas, souveraineté.">
+<link rel="icon" type="image/png" href="images/bague-logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BAGUÉ">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Qui sommes-nous — BAGUÉ">
+<meta property="og:description" content="Deux Guinéens, un chercheur en IA embarquée et un responsable des opérations à Conakry, et huit engagements pour un registre anti-vol du bétail juste et fiable.">
+<meta property="og:url" content="https://bague-guinee.github.io/bague-vitrine/engagement.html">
+<meta property="og:image" content="https://bague-guinee.github.io/bague-vitrine/images/apercu.png"> <meta property="og:image:width" content="1200"> <meta property="og:image:height" content="630"> <meta property="og:image:alt" content="Le kit BAGUÉ et le logo : identifier chaque bovin par son mufle">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://bague-guinee.github.io/bague-vitrine/images/apercu.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&display=swap">
+<style>
+  :root {
+    --bg: #F6F7F4; --sheet: #FFFFFF; --ink: #18241F; --ink-2: #4A5852; --rule: #D5DAD3;
+    --indigo: #2B3A6E; --indigo-soft: #DFE3F0; --on-indigo: #FFFFFF;
+    --green: #1E7F47; --red: #B42318; --orange: #B86E00; --grey: #5F6A65;
+    --font: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121A17; --sheet: #1A2420; --ink: #E7ECE8; --ink-2: #A9B5AF; --rule: #33403A;
+      --indigo: #9FB0EA; --indigo-soft: #263055; --on-indigo: #121A17; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; }
+  a { color: var(--indigo); text-underline-offset: 0.18em; }
+  :focus-visible { outline: 3px solid var(--indigo); outline-offset: 2px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding-inline: max(18px, env(safe-area-inset-left, 0px)); }
+  header.top { border-bottom: 3px solid var(--indigo); background: var(--sheet); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-block: 14px; }
+  .mark { font-weight: 700; font-size: 1.5rem; letter-spacing: 0.04em; color: var(--indigo); text-decoration: none; }
+  nav { display: flex; gap: 18px; flex-wrap: wrap; }
+  section { padding-block: 56px; border-bottom: 1px solid var(--rule); }
+  h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.05; margin: 0 0 18px; text-wrap: balance; }
+  h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.15; margin: 0 0 18px; text-wrap: balance; }
+  h3 { margin: 0 0 6px; font-size: 1.15rem; }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  .muted { color: var(--ink-2); }
+  .hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+  .hero img { width: 100%; height: auto; }
+  .lede { font-size: 1.2rem; color: var(--ink-2); }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+  .btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 10px; font-weight: 700; text-decoration: none; border: 2px solid var(--indigo); }
+  .btn-main { background: var(--indigo); color: var(--on-indigo); }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; counter-reset: step; }
+  .steps > li { counter-increment: step; border-top: 4px solid var(--indigo); padding-top: 12px; }
+  .steps > li::before { content: counter(step); font-weight: 700; font-size: 1.6rem; color: var(--indigo); display: block; }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 0; padding: 0; list-style: none; }
+  .chip { padding: 2px 12px; border-radius: 999px; color: #fff; font-weight: 700; font-size: 0.92rem; }
+  .figure { margin: 0; }
+  .figure img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--rule); background: var(--sheet); }
+  .figure figcaption { color: var(--ink-2); font-size: 0.95rem; margin-top: 8px; }
+  .pipeline { display: flex; flex-wrap: wrap; gap: 10px; align-items: stretch; margin: 10px 0 24px; padding: 0; list-style: none; }
+  .pipeline li { flex: 1 1 150px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px; position: relative; }
+  .pipeline li strong { display: block; }
+  .pipeline li span { color: var(--ink-2); font-size: 0.93rem; }
+  .table-box { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 560px; background: var(--sheet); }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-size: 0.95rem; color: var(--ink-2); }
+  .pending { color: var(--orange); font-weight: 700; }
+  .ok { color: var(--green); font-weight: 700; }
+  .card { background: var(--sheet); border: 1px solid var(--rule); border-radius: 12px; padding: 18px 20px; }
+  footer { padding-block: 36px; color: var(--ink-2); font-size: 0.95rem; }
+  code { font-size: 0.92em; background: var(--indigo-soft); padding: 1px 5px; border-radius: 4px; }
+  @media (max-width: 760px) { .hero { grid-template-columns: 1fr; } section { padding-block: 40px; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="./">BAGUÉ</a>
+    <nav aria-label="Pages du site">
+      <a href="./">Accueil</a>
+      <a href="demo.html">Démo *123#</a>
+      <a href="3d.html">Matériel en 3D</a>
+      <a href="./#recherche">Recherche</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <h1>Qui sommes-nous, et à quoi nous nous engageons.</h1>
+      <p class="lede">BAGUÉ est porté par deux Guinéens. Notre but est simple : qu'un éleveur puisse prouver, avec une seule photo, que sa vache est la sienne, et qu'une vache volée soit reconnue au marché ou au barrage.</p>
+      <div class="actions">
+        <a class="btn btn-main" href="demo.html">Essayer la démo *123#</a>
+        <a class="btn" href="3d.html">Voir le kit en 3D</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>L'équipe</h2>
+      <div class="cols">
+        <div class="card">
+          <h3>Thierno Ibrahima Diallo</h3>
+          <p class="muted">Chercheur en IA embarquée, laboratoire du Pr Hongpeng Wang, Harbin Institute of Technology, Shenzhen. Responsable de la technologie : reconnaissance du mufle, logiciel des kits et du serveur, architecture et sécurité.</p>
+          <p><a href="https://orcid.org/0009-0008-2793-1901">ORCID 0009-0008-2793-1901</a></p>
+        </div>
+        <div class="card">
+          <h3>Mamadou Kandara Souaré</h3>
+          <p class="muted">Basé à Conakry. Responsable des relations avec les autorités, des tests sur le terrain, de l'exploitation et du déploiement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Nos huit engagements</h2>
+      <div class="cols">
+        <div class="card"><h3>1. L'éleveur d'abord</h3><p class="muted">Un téléphone à touches suffit : signaler un vol, voir ses animaux, vérifier une vache par *123#. Ni smartphone, ni Internet, ni lecture exigés.</p></div>
+        <div class="card"><h3>2. Personne n'est accusé par une machine</h3><p class="muted">Une alerte de vol demande deux photos concordantes, prises l'une après l'autre, puis une confirmation humaine. Un doute donne ORANGE : on refait la photo, jamais de saisie.</p></div>
+        <div class="card"><h3>3. Des données protégées</h3><p class="muted">Ni nom, ni téléphone, ni pièce d'identité dans les données de recherche. Aucune vente de données, aucun usage fiscal. Respect de la loi guinéenne L/2016/037/AN.</p></div>
+        <div class="card"><h3>4. Des chiffres honnêtes</h3><p class="muted">Aucune précision annoncée avant d'avoir mesuré sur de vraies vaches guinéennes. Les erreurs sont publiées par race et par âge, avec leurs limites.</p></div>
+        <div class="card"><h3>5. Un coût bas</h3><p class="muted">Des kits Raspberry Pi à bas coût et une empreinte de 128 octets par animal, pour qu'un registre national reste abordable pour l'État.</p></div>
+        <div class="card"><h3>6. La souveraineté</h3><p class="muted">Un pilote hébergé sur un serveur loué, puis le registre en Guinée, au centre de données national, dès le passage à l'échelle.</p></div>
+        <div class="card"><h3>7. Le respect des animaux</h3><p class="muted">Une photo du mufle, sans marquage ni douleur. Le cône est désinfecté entre deux animaux.</p></div>
+        <div class="card"><h3>8. Un travail vérifiable</h3><p class="muted">Méthode d'évaluation fixée avant les mesures, selon la norme ISO/IEC 19795-1, publiée et citable. Les résultats seront soumis à des revues scientifiques.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2026 Les auteurs du projet BAGUÉ. Tous droits réservés. Contenu publié pour présentation.
+  </div>
+</footer>
+</body>
+</html>

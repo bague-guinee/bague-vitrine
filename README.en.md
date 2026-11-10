@@ -6,6 +6,7 @@
 
 ![Status](https://img.shields.io/badge/status-demonstrator-2B3A6E) ![Country](https://img.shields.io/badge/country-Guinea-1E7F47) ![License](https://img.shields.io/badge/license-all%20rights%20reserved-6F7A75)
 
+**Website and live demo: [https://bague-guinee.github.io/bague-vitrine/](https://bague-guinee.github.io/bague-vitrine/)** — `*123#` demo and 3D hardware.
 
 <p align="center">
   <img src="docs/images/demo.gif" alt="Demonstrator animation: enrolling a cow, green check, theft reported via *123#, red check, alert on the authorities' dashboard" width="80%">

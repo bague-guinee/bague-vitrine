@@ -6,6 +6,7 @@
 
 ![Statut](https://img.shields.io/badge/statut-d%C3%A9monstrateur-2B3A6E) ![Pays](https://img.shields.io/badge/pays-Guin%C3%A9e-1E7F47) ![Licence](https://img.shields.io/badge/licence-tous%20droits%20r%C3%A9serv%C3%A9s-6F7A75)
 
+**Site et démo en ligne : [https://bague-guinee.github.io/bague-vitrine/](https://bague-guinee.github.io/bague-vitrine/)** — démo `*123#` et matériel en 3D.
 
 <p align="center">
   <img src="docs/images/demo.gif" alt="Animation du démonstrateur : enregistrement d'une vache, contrôle vert, vol signalé par *123#, contrôle rouge, alerte sur le tableau des autorités" width="80%">

@@ -17,7 +17,8 @@ authors:
   - family-names: Souaré
     given-names: Mamadou Kandara
 version: "0.3.0"
-date-released: "2026-11-10"
+date-released: "2026-11-11"
+repository-code: "https://github.com/bague-guinee/bague-vitrine"
 keywords:
   - muzzle biometrics
   - cattle identification
