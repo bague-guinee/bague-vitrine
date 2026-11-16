@@ -44,15 +44,15 @@ flowchart LR
 ## Hardware
 
 <p align="center">
-  <img src="docs/images/3d-kit.jpg" alt="BAGUÉ field kit in 3D: black cone, light body, handle" width="48%">
+  <img src="docs/images/3d-kit.jpg" alt="BAGUÉ field kit in 3D: 7-inch screen, two handles, black cone" width="48%">
   <img src="docs/images/3d-poste.jpg" alt="BAGUÉ solar fixed post in 3D" width="38%">
 </p>
 
 | Field kit | Fixed post |
 | --- | --- |
-| Raspberry Pi CM5, camera at the back of an LED-lit cone (fixed distance and lighting), touchscreen, 4G + GPS, removable battery pack. **About USD 165–250.** | 200 W solar + LiFePO4 battery, dual-SIM 4G router, 7" screen, thermal printer, charging station for 4 kits. **About USD 920–1,520.** |
+| Raspberry Pi CM5 with a 7-inch touchscreen, camera at the back of a magnetic LED-lit cone (fixed distance and lighting), two handles with a photo button, removable 20,000 mAh battery. **Prototype: about USD 400.** | 200 W solar + LiFePO4 battery, dual-SIM 4G router, 7" screen, thermal printer, charging station for 4 kits. **About USD 920–1,520.** |
 
-These are **designs**: the first physical kit has not been assembled yet. Prices estimated from components, before quotes.
+The **kit prototype** (version 0.4.0) is being assembled: parts bought in Shenzhen, 3D-printed housing. The fixed post is a **design**; price estimated from components, before quotes.
 
 ## Research
 
@@ -105,6 +105,10 @@ Full charter (French): [docs/ETHIQUE.md](docs/ETHIQUE.md).
 | --- | --- |
 | **Thierno Diallo** | Technology: recognition AI, kit, post and server software, architecture and security. Researcher in embedded AI (robust, energy-efficient AI for resource-limited settings), Prof. Hongpeng Wang's laboratory, Harbin Institute of Technology, Shenzhen. |
 | **Mamadou Kandara Souaré** | Sales and operations in Conakry: relations with authorities, field testing, operation and deployment. |
+
+### Scientific supervision
+
+This research is supervised by **Prof. Hongpeng Wang** (School of Computer Science and Technology, Harbin Institute of Technology, Shenzhen), who guides the research method and the evaluation protocol.
 
 ## Citation
 

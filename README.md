@@ -44,15 +44,15 @@ flowchart LR
 ## Le matériel
 
 <p align="center">
-  <img src="docs/images/3d-kit.jpg" alt="Le kit de terrain BAGUÉ en 3D : cône noir, corps clair, poignée" width="48%">
+  <img src="docs/images/3d-kit.jpg" alt="Le kit de terrain BAGUÉ en 3D : écran 7 pouces, deux poignées, cône noir" width="48%">
   <img src="docs/images/3d-poste.jpg" alt="Le poste fixe solaire BAGUÉ en 3D" width="38%">
 </p>
 
 | Kit de terrain | Poste fixe |
 | --- | --- |
-| Raspberry Pi CM5, caméra au fond d'un cône à LED (distance et lumière fixes), écran tactile, 4G + GPS, pack de batteries amovible. **Environ 165 à 250 USD.** | Solaire 200 W + batterie LiFePO4, routeur 4G double SIM, écran 7", imprimante thermique, station de recharge pour 4 kits. **Environ 920 à 1 520 USD.** |
+| Raspberry Pi CM5 et écran tactile 7 pouces, caméra au fond d'un cône aimanté à LED (distance et lumière fixes), deux poignées avec bouton photo, batterie 20 000 mAh amovible. **Prototype : environ 400 USD.** | Solaire 200 W + batterie LiFePO4, routeur 4G double SIM, écran 7", imprimante thermique, station de recharge pour 4 kits. **Environ 920 à 1 520 USD.** |
 
-Ce sont des **conceptions** : le premier kit physique n'est pas encore assemblé. Prix estimés à partir des composants, avant devis. Planches techniques : [kit](docs/images/planche-kit.jpg), [poste](docs/images/planche-poste.jpg), [mallette](docs/images/planche-mallette.jpg).
+Le **prototype du kit** (version 0.4.0) est en cours d'assemblage : composants achetés à Shenzhen, pièces imprimées en 3D. Le poste fixe est une **conception** ; prix estimé à partir des composants, avant devis. Planches techniques : [kit](docs/images/planche-kit.jpg), [poste](docs/images/planche-poste.jpg), [mallette](docs/images/planche-mallette.jpg).
 
 ## La recherche
 
@@ -118,6 +118,10 @@ Charte complète : [docs/ETHIQUE.md](docs/ETHIQUE.md) · [formulaire de consente
 | --- | --- |
 | **Thierno Diallo** | Technologie : IA de reconnaissance, logiciel des kits, des postes et du serveur, architecture et sécurité. Chercheur en IA embarquée (IA robuste et économe en énergie pour les milieux aux ressources limitées), laboratoire du Pr Hongpeng Wang, Harbin Institute of Technology, Shenzhen. |
 | **Mamadou Kandara Souaré** | Ventes et opérations à Conakry : présentation aux autorités, tests sur le terrain, exploitation et déploiement. |
+
+### Encadrement scientifique
+
+Ce travail de recherche est encadré par le **Pr Hongpeng Wang** (School of Computer Science and Technology, Harbin Institute of Technology, Shenzhen), qui guide la méthode de recherche et le protocole d'évaluation.
 
 ## Citer ce projet
 

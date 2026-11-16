@@ -16,8 +16,8 @@ authors:
     affiliation: "Harbin Institute of Technology, Shenzhen"
   - family-names: Souaré
     given-names: Mamadou Kandara
-version: "0.3.0"
-date-released: "2026-11-11"
+version: "0.4.0"
+date-released: "2026-11-16"
 repository-code: "https://github.com/bague-guinee/bague-vitrine"
 keywords:
   - muzzle biometrics

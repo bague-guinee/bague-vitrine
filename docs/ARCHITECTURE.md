@@ -56,7 +56,7 @@ poste coupé = registre de sa région ; serveur central = USSD toujours disponib
 
 | Composant | Matériel | Logiciel | Données gardées |
 |---|---|---|---|
-| Kit CM5 | CM5 2 Go, eMMC 16 Go, Camera Module 3 + cône rond à LED, écran 5" sur le dessus (portrait), gâchette, 4G Cat-1 + GPS (sauf marché), 4×21700. Prototype : CM5 4 Go sur carte Waveshare CM5-IO-BASE-A, sans 4G ; fichiers 3D dans `hardware/` | Linux, appli BAGUÉ Python, ONNX Runtime, SQLite | Liste rouge, empreintes en transit et de la zone, file d'événements signés |
+| Kit CM5 | CM5 2 Go, eMMC 16 Go, Camera Module 3 + cône rond à LED, écran 5" sur le dessus (portrait), gâchette, 4G Cat-1 + GPS (sauf marché), 4×21700. Prototype v2 (0.4.0) : CM5 4 Go dans le kit Waveshare CM5-HMI-7A (écran 7 pouces), deux poignées, bouton photo, batterie 20 000 mAh, sans 4G ; fichiers 3D dans `hardware/prototype_v2/` | Linux, appli BAGUÉ Python, ONNX Runtime, SQLite | Liste rouge, empreintes en transit et de la zone, file d'événements signés |
 | Poste CM5 | CM5 4 Go, écran 7", 1–2 caméras (guichet + perche), routeur 4G double SIM, imprimante thermique, solaire 200 W + LiFePO4 100 Ah | Même appli en mode poste + serveur local de synchro | Registre régional int8 (≈ 400 Mo / 1 M vaches), liste rouge, file d'événements |
 | Serveur central | VPS puis centre national | FastAPI, PostgreSQL + pgvector, ONNX Runtime, Caddy, Docker Compose | Registre national complet |
 | Passerelle opérateurs | — | API SMS Orange Guinée, agrégateur multi-opérateurs, USSD | Journal des échanges |
